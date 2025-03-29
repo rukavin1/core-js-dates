@@ -281,8 +281,9 @@ function getWeekNumberByDate(date) {
 function getNextFridayThe13th(date) {
   let year = date.getFullYear();
   let month = date.getMonth();
+  const found = false;
 
-  while (true) {
+  while (!found) {
     const testDate = new Date(year, month, 13);
     if (testDate.getDay() === 5 && testDate >= date) {
       return testDate;
@@ -294,6 +295,7 @@ function getNextFridayThe13th(date) {
       year += 1;
     }
   }
+  return null;
 }
 
 /**
